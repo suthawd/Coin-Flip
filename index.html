@@ -1,28 +1,52 @@
+<!--https://www.w3schools.com/tags/tag_doctype.ASP-->
+<!--Memberi tahu browser bahawa ini adalah html versi 5-->
 <!DOCTYPE html>
+<!--https://www.w3schools.com/tags/ref_language_codes.asp-->
+<!--Halaman Berbahasa Inggris-->
 <html lang="en">
+  <!--https://www.w3schools.com/tags//tag_head.asp-->
+  <!--Bagian Kepala di halaman-->
   <head>
+    <!--https://www.w3schools.com/tags/att_meta_charset.asp-->
+    <!--Charset digunakan agar semua jenis huruf atau simbol bisa digunakan-->
     <meta charset="UTF-8" />
+    <!--https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta/name/viewport-->
+    <!--Menyesuaikan Tampilan halaman web sesuai dengan device-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--https://www.w3schools.com/tags/tag_meta.asp-->
+    <!--Konten deskripsi untuk pencarian di google-->
     <meta name="description" content="A simple one-button coin flip app" />
+    <!--GONG!, Judul dan isi untuk semua  isi konten di web saya-->
     <title>Coin Flip</title>
+    <!--https://www.w3schools.com/tags/tag_link.asp-->
+    <!--Menyambung code ini ke style.css-->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!--Tag <Main> Bagian utama halaman web ini-->
     <main class="app">
+      <!--https://www.w3schools.com/tags/tag_hn.asp-->
+      <!--Memberi kelas untuk css pada app_label dan hint dan deskripsi-->
       <p class="app__label">One-button app</p>
       <h1>Coin Flip</h1>
       <p class="app__hint">Press the button. That is the whole app.</p>
 
       <div class="coin" id="coin" aria-hidden="true">
+        <!--Memberikan tanda pada coin H dan T-->
+        <!--https://www.w3schools.com/tags/tag_span.asp-->
         <span class="coin__face coin__face--heads">H</span>
         <span class="coin__face coin__face--tails">T</span>
+       
       </div>
 
       <p class="result" id="result" aria-live="polite">Ready when you are.</p>
-
+      <!--https://www.w3schools.com/Tags/att_button_type.asp-->
+      <!--Memberikan Tombol atau button dan memberikan id, mengisi teks flip coin untuk tombol-->
       <button type="button" id="flip-btn" class="flip-btn">Flip Coin</button>
+    
     </main>
-
+    <!--https://www.w3schools.com/TAgs/att_script_type.asp-->
+    <!--Menyambungkan index.html ke app.js untuk berisikan logika animasi-->
     <script type="module" src="app.js"></script>
   </body>
 </html>
