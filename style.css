@@ -1,4 +1,6 @@
 :root {
+  /*Warna untuk sebagian besar web*/
+  /*https://www.w3schools.com/cssref/sel_root.php*/
   --bg: #0f172a;
   --text: #f8fafc;
   --muted: #94a3b8;
@@ -7,7 +9,8 @@
   --btn: #38bdf8;
   --btn-hover: #0ea5e9;
 }
-
+/*https://www.w3schools.com/css/css3_box-sizing.asp*/
+/*Membuat padding dan border agar tidak menambahkan total elemen*/
 *,
 *::before,
 *::after {
@@ -16,11 +19,16 @@
 
 html,
 body {
+  /*https://www.w3schools.com/cssref/pr_dim_min-height.php*/
+  /*Mengatur Margin dan Tinggi*/
   margin: 0;
   min-height: 100%;
 }
 
 body {
+  /*https://www.w3schools.com/css/css_font.asp*/
+  /*https://www.w3schools.com/css/css3_gradients_radial.asp*/
+  /*Mengatur Font untuk teks dan warna*/
   font-family: "Segoe UI", system-ui, sans-serif;
   background:
     radial-gradient(circle at top, #1e293b 0%, var(--bg) 55%),
@@ -28,6 +36,7 @@ body {
   color: var(--text);
 }
 
+/*Mengatur konten keseluruhan yang berada di tengah tengah*/
 .app {
   min-height: 100vh;
   display: flex;
@@ -39,7 +48,7 @@ body {
   text-align: center;
   perspective: 1000px;
 }
-
+/*Mengatur style one button app*/
 .app__label {
   margin: 0;
   color: var(--muted);
@@ -47,17 +56,18 @@ body {
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
-
+/*Mengatur tulisan coin flip*/
 h1 {
   margin: 0;
   font-size: clamp(2rem, 8vw, 3rem);
 }
-
+/*Mengatur tulisan press the button*/
 .app__hint {
   margin: 0 0 1rem;
   color: var(--muted);
 }
-
+/*https://www.w3schools.com/cssref/css3_pr_transform-style.php*/
+/*Mengatur efek animasi 3d koin*/
 .coin {
   position: relative;
   width: 120px;
@@ -66,7 +76,7 @@ h1 {
   transform-style: preserve-3d;
   transition: transform 0.1s linear;
 }
-
+/*Mengatur kedua sisi coin H dan T*/
 .coin__face {
   position: absolute;
   inset: 0;
@@ -81,23 +91,27 @@ h1 {
   border: 4px solid var(--coin-edge);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
 }
-
+/*https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/transform-function/rotateY*/
+/*Merotasi koin*/
 .coin__face--tails {
   transform: rotateY(180deg);
 }
-
+/*Menjalankan animasi flipping berdasarkan js*/
 .coin--flipping {
   animation: spin 0.8s ease-in-out forwards;
 }
-
+/*Hasil Akhir head tidak diputar*/
+/*https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/transform-function/rotate*/
 .coin--heads {
   transform: rotateY(0deg);
 }
-
+/*https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/transform-function/rotate*/
+/*Hasil Akhir tails diputar 180 derajat*/
 .coin--tails {
   transform: rotateY(180deg);
 }
-
+/*https://www.w3schools.com/cssref/atrule_keyframes.php*/
+/*animasi putaran koin dari 0 derajat sampai nilai variable*/
 @keyframes spin {
   from {
     transform: rotateY(0deg);
@@ -106,14 +120,14 @@ h1 {
     transform: rotateY(var(--end-rotation, 1800deg));
   }
 }
-
+/*Hasil*/
 .result {
   margin: 0;
   min-height: 2rem;
   font-size: 1.35rem;
   font-weight: 700;
 }
-
+/*Mengedit tombol flip koin*/
 .flip-btn {
   margin-top: 0.5rem;
   border: none;
@@ -128,21 +142,22 @@ h1 {
   box-shadow: 0 10px 25px rgba(56, 189, 248, 0.35);
   transition: transform 0.15s ease, background 0.15s ease;
 }
-
+/*Menambahkan animasi saat cursor mendekati tombol flip*/
 .flip-btn:hover {
   background: var(--btn-hover);
   transform: translateY(-2px);
 }
-
+/*setelah tombol ditekan kembali ke posisi semula*/
 .flip-btn:active {
   transform: translateY(0);
 }
-
+/*https://www.w3schools.com/cssref/sel_focus-visible.php*/
+/*agar tombol flip ada fokus nya di sisi, saat penggunaa menggunakan keyboard khususnya "Tab"*/
 .flip-btn:focus-visible {
   outline: 3px solid #bae6fd;
   outline-offset: 3px;
 }
-
+/*saat mengklik tombol flip cursor akan loading*/
 .flip-btn:disabled {
   opacity: 0.7;
   cursor: wait;
